@@ -1,0 +1,282 @@
+/* === GLOBAL RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 18px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #222;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1db954;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #b3b3b3;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #1db954;
+}
+
+.wallet-address {
+  background: #1b1b1b;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #9fdcaa;
+}
+
+/* === PAGE CONTAINER (THIS IS THE FIX) === */
+.page-container, .dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* This padding-top pushes all content below the fixed navbar */
+  padding: 140px 20px 60px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Center the main content */
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* === TEXT === */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1db954;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #b3b3b3;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* === NEW STYLES FOR TEAM PAGE (HORIZONTAL ROW) === */
+.team-horizontal-row {
+  display: flex;
+  flex-direction: row; /* Arrange items in a row */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center the items horizontally */
+  gap: 30px; /* Space between each team member card */
+  width: 100%;
+}
+
+.team-card {
+  background: #161616;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, background 0.3s ease;
+  width: 220px; /* A fixed width for each card */
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  background: #1b1b1b;
+}
+
+.team-photo {
+  width: 120px; /* Smaller 120px circle */
+  height: 120px;
+  border-radius: 50%; /* Make the photo circular */
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid rgba(29, 185, 84, 0.5); /* Green border */
+}
+
+.team-card h3 {
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+
+/* === TRANSACTION TABLE (Spotify Style) === */
+.table-container {
+  width: 100%;
+  margin-top: 40px;
+  overflow-x: auto;
+  background: rgba(18, 18, 18, 0.95);
+  border-radius: 14px;
+  border: 1px solid #222;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+thead {
+  background: #181818;
+  color: #1db954;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+th, td {
+  padding: 14px 20px;
+  text-align: center;
+  border-bottom: 1px solid #222;
+}
+
+tbody tr:nth-child(even) {
+  background: #141414;
+}
+
+tbody tr:hover {
+  background: #1f1f1f;
+  transition: background 0.3s ease;
+}
+
+/* Transaction Type Badges */
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.badge.bought {
+  background: rgba(0, 255, 128, 0.15);
+  color: #00ff80;
+  border: 1px solid rgba(0, 255, 128, 0.3);
+}
+
+.badge.sold {
+  background: rgba(0, 128, 255, 0.15);
+  color: #3399ff;
+  border: 1px solid rgba(0, 128, 255, 0.3);
+}
+
+.badge.royalty {
+  background: rgba(153, 51, 255, 0.15);
+  color: #b266ff;
+  border: 1px solid rgba(153, 51, 255, 0.3);
+}
+
+.badge.created {
+  background: rgba(255, 204, 0, 0.15);
+  color: #ffcc00;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+/* === SCROLLBAR STYLE === */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1db954;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  /* On medium screens, go to 2 columns */
+  .team-horizontal-row {
+     /* You can adjust gap or other properties here if needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .page-container, .dashboard-container {
+    /* Adjust padding for smaller navbar */
+    padding: 120px 16px 40px; 
+  }
+
+  th, td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .team-horizontal-row {
+    /* Stack vertically on small screens */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 320px; /* Constrain width for single column */
+  }
+}
